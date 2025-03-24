@@ -8,7 +8,7 @@ const EditItem = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://lost-found-backend-alpha.vercel.app/api/items/${id}`)
+    axios.get(`http://localhost:5050/api/items/${id}`)
       .then(response => setFormData(response.data))
       .catch(err => console.log(err));
   }, [id]);
@@ -16,7 +16,7 @@ const EditItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://lost-found-backend-alpha.vercel.app/api/items/${id}`, formData);
+      await axios.put(`http://localhost:5050/api/items/${id}`, formData);
       alert('Item updated successfully');
       navigate('/home');
     } catch (err) {

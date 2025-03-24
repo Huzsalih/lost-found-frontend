@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://lost-found-backend-alpha.vercel.app/api/items', {
+    axios.get('http://localhost:5050/api/items', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -20,7 +20,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://lost-found-backend-alpha.vercel.app/api/items/${id}`, {
+      await axios.delete(`http://localhost:5050/api/items/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

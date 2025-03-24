@@ -9,7 +9,7 @@ const AddItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://lost-found-backend-alpha.vercel.app/api/items', formData);
+      await axios.post('http://localhost:5050/api/items', formData);
       alert('Item added successfully');
       navigate('/home');
     } catch (err) {
